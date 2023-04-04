@@ -1,19 +1,26 @@
+// 元组结构
+struct Pair(i32, f32);
+
+// 标准的 C 结构
+#[derive(Debug)] // 派生属性
+struct Person {
+    name: String,
+    age: u8,
+}
+
+// 单元结构（无字段, 通常在泛型里面使用）
+
+
 fn main() {
-    let mut arr: [i32; 5] = [1, 2, 3, 4, 5];    
-    let slice = &arr[0..3]; // ..是 Rust Range 语法. & 是引用符号
+    let pair = Pair(10, 4.2);
+    println!("{}", pair.0);
 
-    println!("slice[0] = {}, len = {}", slice[0], slice.len());
+    let jack = Person {
+        name: String::from("jack"),
+        age: 6,
+    };
 
-    let slice2 = &arr[3..];
-
-    println!("slice2[0] = {}, slice2[1] = {}", slice2[0], slice2[1]);
-    println!("slice.length = {}", slice2.len());
-
-    let mut slice3 = &mut arr[..];
-
-    slice3[0] = 6;
-
-    println!("arr[0] = {}", arr[0])
-
+    println!("name = {}, age = {}", jack.name, jack.age);
+    println!("{:?}", jack);
 
 }
