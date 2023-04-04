@@ -1,18 +1,9 @@
-enum IPAddr {
-    IPv4(u8, u8, u8, u8),
-    IPv6(u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8),
-}
-
+use std::mem;
 
 fn main() {
-    let localhost: IPAddr = IPAddr::IPv4(127, 0, 0, 1);
-
-    match localhost {
-        IPAddr::IPv4(a, b, c, d) => {
-            println!("{} {} {} {}", a, b, c, d);
-        }
-        _ => {}
+    unsafe {
+        let a = [0u8, 1u8, 0u8, 0u8];
+        let b: u32 = mem::transmute(a);
+        println!("{}", b)
     }
-
-    
 }
