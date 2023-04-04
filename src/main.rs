@@ -1,24 +1,17 @@
 fn main() {
-    // 1 + 2 + ... + 100
-    let mut sum = 0;
+    // fizzbuzz
+
     let mut n = 1;
-    loop {
-        sum += n;
+    while n < 101 {
+        if n % 15 == 0 {
+            println!("fizzbuzz")
+        } else if n % 3 == 0 {
+            println!("fizz")
+        } else if n % 5 == 0 {
+            println!("buzz")
+        } else {
+            println!("{}", n)
+        }
         n += 1;
-        if n > 100 {
-            break;
-        }
     }
-    println!("{} value is sum", sum);
-
-    let mut counter = 0;
-    let result = loop {
-        counter += 1;
-
-        if counter == 100 {
-            break counter * 2;
-        }
-    };
-
-    println!("{} value is counter", result);
 }
