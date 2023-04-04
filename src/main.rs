@@ -4,31 +4,11 @@
 // 常量： const 关键字
 // Shadowing: 隐藏
 
-const A_CONST: i32 = 42;
-
-fn get_number() -> i32 {
-    42
-}
 
 fn main() {
-    let x = 5;
-    println!("The value of x is {}", x);
+    let c = 'z';
+    let z = 'Z';
+    let heart_eyed_cat = '中';
 
-    let mut y = 6;
-    println!("the value of y is {}", y);
-
-    y = 10;
-    println!("the value of y is {}", y);
-
-    println!("the value of A_CONST is {}", A_CONST);
-
-    let r = get_number();
-
-    println!("the value of get_number() is {}", r);
-
-
-    // 隐藏
-    let x = x * 10;
-    println!("the value of x is {}", x);
-
+    println!("{} {} {}", c,z,heart_eyed_cat);
 }
