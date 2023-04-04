@@ -1,11 +1,19 @@
 fn main() {
-    let myarray: [u32; 5] = [1, 2, 3, 4, 5];
-    
-    println!("myarray[1]={}", myarray[1]); // 2
+    let mut arr: [i32; 5] = [1, 2, 3, 4, 5];    
+    let slice = &arr[0..3]; // ..是 Rust Range 语法. & 是引用符号
 
-    let mybuffer: [u32; 32 * 1024] = [0; 32 * 1024];
+    println!("slice[0] = {}, len = {}", slice[0], slice.len());
 
-    println!("mybuffer[1024] = {}", mybuffer[1024]);
+    let slice2 = &arr[3..];
 
-    
+    println!("slice2[0] = {}, slice2[1] = {}", slice2[0], slice2[1]);
+    println!("slice.length = {}", slice2.len());
+
+    let mut slice3 = &mut arr[..];
+
+    slice3[0] = 6;
+
+    println!("arr[0] = {}", arr[0])
+
+
 }
