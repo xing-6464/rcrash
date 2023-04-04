@@ -1,19 +1,24 @@
 fn main() {
-    let n = 5;
-
-    if n > 0 {
-        println!("{} is positive", n);
-    } else if n < 0 {
-        println!("{} is nefative", n);
-    } else {
-        println!("{} is ziro" ,n)
+    // 1 + 2 + ... + 100
+    let mut sum = 0;
+    let mut n = 1;
+    loop {
+        sum += n;
+        n += 1;
+        if n > 100 {
+            break;
+        }
     }
+    println!("{} value is sum", sum);
 
-    let m = if n < 0 {
-        2.0
-    } else {
-        3.0
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+
+        if counter == 100 {
+            break counter * 2;
+        }
     };
 
-    println!("{} value is m", m);
+    println!("{} value is counter", result);
 }
