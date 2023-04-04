@@ -1,17 +1,22 @@
 fn main() {
-    // fizzbuzz
+    for i in 0..5 {
+        println!("{}", i)
+    }
 
-    let mut n = 1;
-    while n < 101 {
-        if n % 15 == 0 {
-            println!("fizzbuzz")
-        } else if n % 3 == 0 {
-            println!("fizz")
-        } else if n % 5 == 0 {
-            println!("buzz")
-        } else {
-            println!("{}", n)
-        }
-        n += 1;
+    for i in 0..=5 {
+        println!("{}", i)
+    }
+
+    let myarray = ["a", "b", "c"];
+    for i in myarray.iter() {
+        println!("{:?}", i);
+    }
+
+    let mut myarr = [1, 2, 3];
+    for i in myarr.iter_mut() {
+        *i *= 2;
+    }
+    for i in myarr.iter() {
+        println!("{}", i);
     }
 }
