@@ -1,26 +1,18 @@
-// 元组结构
-struct Pair(i32, f32);
-
-// 标准的 C 结构
-#[derive(Debug)] // 派生属性
-struct Person {
-    name: String,
-    age: u8,
+enum IPAddr {
+    IPv4(u8, u8, u8, u8),
+    IPv6(u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8, u8),
 }
-
-// 单元结构（无字段, 通常在泛型里面使用）
 
 
 fn main() {
-    let pair = Pair(10, 4.2);
-    println!("{}", pair.0);
+    let localhost: IPAddr = IPAddr::IPv4(127, 0, 0, 1);
 
-    let jack = Person {
-        name: String::from("jack"),
-        age: 6,
-    };
+    match localhost {
+        IPAddr::IPv4(a, b, c, d) => {
+            println!("{} {} {} {}", a, b, c, d);
+        }
+        _ => {}
+    }
 
-    println!("name = {}, age = {}", jack.name, jack.age);
-    println!("{:?}", jack);
-
+    
 }
