@@ -1,12 +1,24 @@
-fn main() {
-    let opcode: u8 = 42;
+enum Alphabet {
+    A,
+    B,
+    C
+}
 
-    match  opcode {
-        42 => {
-            println!("bingo!");
+
+
+fn main() {
+    let letter = Alphabet::A;
+
+    match letter {
+        Alphabet::A => {
+            println!("It a");
         }
         _ => {
-            println!("{}", opcode);
+
         }
+    }
+
+    if let Alphabet::A = letter {
+        println!("It a");
     }
 }
